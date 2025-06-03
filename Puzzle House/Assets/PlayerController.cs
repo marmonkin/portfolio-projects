@@ -2,29 +2,52 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float Speed = 5;
-    [SerializeField] private float TurnSpeed = 360;
+    [Header("Player")]
+    [SerializeField] private float Speed = 5f;
+    [SerializeField] private float TurnSpeed = 360f;
+    [Space(5)]
+
+    [Header("Camera")]
     [SerializeField] private GameObject cameraPivot;
-    
+    [SerializeField] private float stepAngle = 90f;
+    [SerializeField] private float rotationSpeed = 180f;
+
     private Rigidbody rb;
     private Transform model;
     private Vector3 input;
+
+    private bool isRotating = false;
+    private Quaternion targetRotation;
+    private Vector3 rotationChange;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         model = rb.GetComponent<Transform>();
+
+        targetRotation = cameraPivot.transform.rotation;
     }
 
     private void Update()
     {
         GatherInput();
         Look();
+
+        if (Input.GetKeyDown("e"))
+        {
+            CameraRotate(stepAngle);
+        }
+
+        if (Input.GetKeyDown("q"))
+        {
+            CameraRotate(-stepAngle);
+        }
     }
 
     private void FixedUpdate()
     {
         Move();
+        
     }
 
     private void GatherInput()
@@ -43,6 +66,23 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         rb.MovePosition(transform.position + input.ToIso() * input.normalized.magnitude * Speed * Time.deltaTime);
+    }
+
+    private void CameraRotate(float angle)
+    {
+        isRotating = true;
+        targetRotation.y = cameraPivot.transform.rotation.y + angle;
+
+        while (isRotating)
+        {
+            cameraPivot.transform.Rotate(cameraPivot.transform.rotation.x, angle * Time.deltaTime, 0, Space.World);
+
+            if (targetRotation == cameraPivot.transform.rotation)
+            {
+                isRotating = false;
+                //cameraPivot.transform.rotation = targetRotation;
+            }
+        }
     }
 
 
