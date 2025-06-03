@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float Speed = 5;
     [SerializeField] private float TurnSpeed = 360;
+    [SerializeField] private GameObject cameraPivot;
     
     private Rigidbody rb;
     private Transform model;
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(transform.position + input.ToIso() * input.normalized.magnitude * Speed * Time.deltaTime);
     }
+
+
 }
 
 public static class Helpers
