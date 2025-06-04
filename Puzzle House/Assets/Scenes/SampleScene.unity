@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepAngle: 90
-  rotationSpeed: 180
+  rotateDuration: 1
 --- !u!1 &246403517
 GameObject:
   m_ObjectHideFlags: 0

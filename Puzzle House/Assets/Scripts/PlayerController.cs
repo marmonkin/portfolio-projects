@@ -34,5 +34,8 @@ public class PlayerController : MonoBehaviour
         //rb.linearVelocity = new Vector3(_moveDir.x, rb.linearVelocity.y , _moveDir.z).normalized;
 
         transform.forward = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+
+        // New mechanic?
+        // transform.position = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
     }
 }
