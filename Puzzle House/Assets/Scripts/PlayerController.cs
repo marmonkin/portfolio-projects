@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //MovePlayer();
+    }
+
+    private void MovePlayer()
+    {
         float _horInput = Input.GetAxisRaw("Horizontal");
         float _vertInput = Input.GetAxisRaw("Vertical");
 
@@ -31,11 +36,8 @@ public class PlayerController : MonoBehaviour
 
 
         rb.linearVelocity = (_moveDir * Time.deltaTime).normalized * Speed;
-        //rb.linearVelocity = new Vector3(_moveDir.x, rb.linearVelocity.y , _moveDir.z).normalized;
 
         transform.forward = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
 
-        // New mechanic?
-        // transform.position = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
     }
 }

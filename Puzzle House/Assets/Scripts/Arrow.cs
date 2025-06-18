@@ -1,18 +1,25 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
-    private Room CurrentRoom;
+    public Room attachedRoom;
+
+    private Room ParentRoom;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        ParentRoom = GetComponentInParent<Room>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+
     }
 }
