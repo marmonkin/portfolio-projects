@@ -1,14 +1,9 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    [Header("Directions")]
-    //[SerializeField] private Room NorthRoom;
-    //[SerializeField] private Room SouthRoom;
-    //[SerializeField] private Room WestRoom;
-    //[SerializeField] private Room EastRoom;
-    [SerializeField] private Room[] AllRooms = new Room[4];
 
     [Space(10)]
 
@@ -16,14 +11,25 @@ public class Room : MonoBehaviour
     [SerializeField] private GameObject MiddlePoint;
     [SerializeField] private GameObject ArrowPrefab;
 
+    [HideInInspector] public List <Room> AllRooms = new List<Room>(4);
+
     private void Awake()
     {
         
     }
     void Start()
     {
-        //Room[] AllRooms = new Room[] {NorthRoom, SouthRoom, WestRoom, EastRoom};
+        SpawnArrows();
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void SpawnArrows()
+    {
         Debug.Log(AllRooms[0]);
 
         foreach (Room room in AllRooms)
@@ -44,11 +50,5 @@ public class Room : MonoBehaviour
                 prefab.transform.SetParent(transform);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

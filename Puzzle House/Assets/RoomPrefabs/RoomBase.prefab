@@ -104,7 +104,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -213,7 +213,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -430,7 +430,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -482,9 +482,10 @@ GameObject:
   - component: {fileID: 7339642677375601351}
   - component: {fileID: 9062653599208818954}
   - component: {fileID: 1122402791536173923}
+  - component: {fileID: 8461717924127635387}
   m_Layer: 0
   m_Name: RoomBase
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,9 +524,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 11, y: 9, z: 11}
   m_Center: {x: 0, y: 4, z: 0}
 --- !u!114 &1122402791536173923
 MonoBehaviour:
@@ -539,14 +540,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e4ebd366c0b924f8f7360b54ce5dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NorthRoom: {fileID: 0}
-  SouthRoom: {fileID: 0}
-  WestRoom: {fileID: 0}
-  EastRoom: {fileID: 0}
+  AllRooms: []
   MiddlePoint: {fileID: 3866689464789340280}
   ArrowPrefab: {fileID: 5995449526289229453, guid: b0ab33e540b16e845af59c9eb41e96ff, type: 3}
-  Toggle: 0
-  someobject: {fileID: 0}
+--- !u!114 &8461717924127635387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3801425038093333335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4320b59c75d784f890dd04a5110a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetTag: Room
+  MaxDistance: 20
 --- !u!1 &3866689464789340280
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +692,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
