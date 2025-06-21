@@ -4,10 +4,11 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [Header("Directions")]
-    [SerializeField] private Room NorthRoom;
-    [SerializeField] private Room SouthRoom;
-    [SerializeField] private Room WestRoom;
-    [SerializeField] private Room EastRoom;
+    //[SerializeField] private Room NorthRoom;
+    //[SerializeField] private Room SouthRoom;
+    //[SerializeField] private Room WestRoom;
+    //[SerializeField] private Room EastRoom;
+    [SerializeField] private Room[] AllRooms = new Room[4];
 
     [Space(10)]
 
@@ -15,14 +16,13 @@ public class Room : MonoBehaviour
     [SerializeField] private GameObject MiddlePoint;
     [SerializeField] private GameObject ArrowPrefab;
 
-
     private void Awake()
     {
         
     }
     void Start()
     {
-        Room[] AllRooms = new Room[] {NorthRoom, SouthRoom, WestRoom, EastRoom};
+        //Room[] AllRooms = new Room[] {NorthRoom, SouthRoom, WestRoom, EastRoom};
 
         Debug.Log(AllRooms[0]);
 

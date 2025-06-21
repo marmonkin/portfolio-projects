@@ -130,19 +130,19 @@ PrefabInstance:
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: EArrow
       value: 
-      objectReference: {fileID: 54464392}
+      objectReference: {fileID: 0}
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: NArrow
       value: 
-      objectReference: {fileID: 54464395}
+      objectReference: {fileID: 0}
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: SArrow
       value: 
-      objectReference: {fileID: 54464394}
+      objectReference: {fileID: 0}
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: WArrow
       value: 
-      objectReference: {fileID: 54464393}
+      objectReference: {fileID: 0}
     - target: {fileID: 3801425038093333335, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_Name
       value: North Room
@@ -212,50 +212,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
---- !u!114 &54464392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3858316535755072634, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
-  m_PrefabInstance: {fileID: 54464391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9badd6de6696124e809ffa9166b12d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &54464393 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6819816279025295306, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
-  m_PrefabInstance: {fileID: 54464391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9badd6de6696124e809ffa9166b12d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &54464394 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8428407492111885437, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
-  m_PrefabInstance: {fileID: 54464391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9badd6de6696124e809ffa9166b12d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &54464395 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1131831727762170425, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
-  m_PrefabInstance: {fileID: 54464391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9badd6de6696124e809ffa9166b12d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &54464396 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
@@ -728,6 +684,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: EastRoom
+      value: 
+      objectReference: {fileID: 1720782281}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: NorthRoom
       value: 
       objectReference: {fileID: 0}
@@ -757,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7339642677375601351, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7339642677375601351, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1205,6 +1165,17 @@ Transform:
   - {fileID: 246403518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720782281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+  m_PrefabInstance: {fileID: 4848609973484824660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e4ebd366c0b924f8f7360b54ce5dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1878324752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,9 +1261,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 54464396}
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
-      propertyPath: ArrowPrefab
+      propertyPath: AllRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: 'AllRooms.Array.data[0]'
       value: 
-      objectReference: {fileID: 5995449526289229453, guid: b0ab33e540b16e845af59c9eb41e96ff, type: 3}
+      objectReference: {fileID: 472538172}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: 'AllRooms.Array.data[1]'
+      value: 
+      objectReference: {fileID: 54464396}
     - target: {fileID: 2532347851317908485, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1351,10 +1330,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7339642677375601351, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9062653599208818954, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
