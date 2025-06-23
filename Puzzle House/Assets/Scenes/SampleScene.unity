@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
   m_PrefabInstance: {fileID: 4848609973484824660}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1921604817}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4e4ebd366c0b924f8f7360b54ce5dce, type: 3}
@@ -1352,6 +1352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f02b530001d1046a4ffde291897f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 149022428}
+  StartingRoom: {fileID: 1921604817}
+--- !u!1 &1921604817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3801425038093333335, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+  m_PrefabInstance: {fileID: 4848609973484824660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4848609973484824660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1403,6 +1410,10 @@ PrefabInstance:
     - target: {fileID: 3801425038093333335, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_Name
       value: RoomBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866689464789340280, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: m_TagString
+      value: Anchor
       objectReference: {fileID: 0}
     - target: {fileID: 5371244262315320937, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_Name

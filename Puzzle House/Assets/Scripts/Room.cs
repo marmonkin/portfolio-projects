@@ -8,7 +8,7 @@ public class Room : MonoBehaviour
     [Space(10)]
 
     [Header("Setup")]
-    [SerializeField] private GameObject MiddlePoint;
+    [SerializeField] public GameObject MiddlePoint;
     [SerializeField] private GameObject ArrowPrefab;
 
     [HideInInspector] public List <Room> AllRooms = new List<Room>(4);
@@ -50,5 +50,7 @@ public class Room : MonoBehaviour
                 prefab.transform.SetParent(transform);
             }
         }
+
+        this.GetComponent<BoxCollider>().enabled = false;
     }
 }
