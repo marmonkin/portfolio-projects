@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+    [Header("Rooms")]
+    [SerializeField] private List <Room> AllRooms = new List<Room>(4);
+
 
     [Space(10)]
 
@@ -11,11 +14,10 @@ public class Room : MonoBehaviour
     [SerializeField] public GameObject MiddlePoint;
     [SerializeField] private GameObject ArrowPrefab;
 
-    [HideInInspector] public List <Room> AllRooms = new List<Room>(4);
 
     private void Awake()
     {
-        
+        this.gameObject.SetActive(false);
     }
     void Start()
     {

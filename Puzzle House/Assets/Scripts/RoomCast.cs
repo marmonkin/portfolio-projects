@@ -8,6 +8,11 @@ public class RoomCast : MonoBehaviour
     [SerializeField] private string TargetTag;
     [SerializeField] private float MaxDistance;
 
+    [Space(10)]
+    [Header("Overrides")]
+    public bool blocked;
+    [SerializeField][ShowIf("blocked")] 
+
     private Room room;
     private List<GameObject> DetectedObjects = new List<GameObject>();
 
@@ -48,7 +53,7 @@ public class RoomCast : MonoBehaviour
 
         foreach (GameObject obj in DetectedObjects)
         {
-            room.AllRooms.Add(obj.GetComponent<Room>());
+            //room.AllRooms.Add(obj.GetComponent<Room>());
         }
     }
 }

@@ -482,7 +482,6 @@ GameObject:
   - component: {fileID: 7339642677375601351}
   - component: {fileID: 9062653599208818954}
   - component: {fileID: 1122402791536173923}
-  - component: {fileID: 8461717924127635387}
   m_Layer: 0
   m_Name: RoomBase
   m_TagString: Room
@@ -540,23 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e4ebd366c0b924f8f7360b54ce5dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllRooms: []
   MiddlePoint: {fileID: 3866689464789340280}
   ArrowPrefab: {fileID: 5995449526289229453, guid: b0ab33e540b16e845af59c9eb41e96ff, type: 3}
---- !u!114 &8461717924127635387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3801425038093333335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4320b59c75d784f890dd04a5110a4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetTag: Room
-  MaxDistance: 20
+  AllRooms: []
 --- !u!1 &3866689464789340280
 GameObject:
   m_ObjectHideFlags: 0
