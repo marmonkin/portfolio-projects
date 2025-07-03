@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public Room attachedRoom;
+    public Room AttachedRoom;
 
-    private Room ParentRoom;
+    private Room parentRoom;
     private GameManager gManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ParentRoom = GetComponentInParent<Room>();
+        parentRoom = GetComponentInParent<Room>();
         gManager = FindAnyObjectByType<GameManager>();
     }
 
@@ -22,6 +22,6 @@ public class Arrow : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gManager.GoToRoom(attachedRoom);
+        gManager.GoToRoom(AttachedRoom);
     }
 }

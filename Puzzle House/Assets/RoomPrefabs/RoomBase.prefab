@@ -539,9 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e4ebd366c0b924f8f7360b54ce5dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRooms: []
   MiddlePoint: {fileID: 3866689464789340280}
-  ArrowPrefab: {fileID: 5995449526289229453, guid: b0ab33e540b16e845af59c9eb41e96ff, type: 3}
-  AllRooms: []
+  arrowPrefab: {fileID: 5995449526289229453, guid: b0ab33e540b16e845af59c9eb41e96ff, type: 3}
 --- !u!1 &3866689464789340280
 GameObject:
   m_ObjectHideFlags: 0
