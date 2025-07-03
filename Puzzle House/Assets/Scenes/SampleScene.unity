@@ -2250,6 +2250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 149022428}
   startingRoom: {fileID: 1921604817}
+  moveDuration: 1
 --- !u!114 &1878324755
 MonoBehaviour:
   m_ObjectHideFlags: 0

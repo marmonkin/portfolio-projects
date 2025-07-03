@@ -42,8 +42,6 @@ public class CameraController : MonoBehaviour
 
         while (_elapsed < rotateDuration)
         {
-            //transform.rotation = initialRotation * newRotation;
-            //transform.rotation = Quaternion.RotateTowards(transform.rotation, initialRotation * newRotation, rotationSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Slerp(_startRotation, _endRotation, _elapsed / rotateDuration);
 
             _elapsed += Time.deltaTime;
