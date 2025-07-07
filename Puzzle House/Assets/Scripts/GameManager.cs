@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         currentRoom = startingRoom.GetComponent<Room>();
         currentRoom.gameObject.SetActive(true);
+        startingRoom.transform.DOLocalMoveY(0, 1, true);
     }
 
     // Update is called once per frame
@@ -26,33 +28,23 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public IEnumerator GoToRoom(Room room, Arrow arrow)
+    public void GoToRoom(Room room)
     {
-        currentRoom.gameObject.SetActive(false);
+        //currentRoom.gameObject.SetActive(false);
+        currentRoom.transform.DOLocalMoveY(-20, 1);
         currentRoom = room;
-        currentRoom.gameObject.SetActive(true);
+        currentRoom.transform.DOLocalMoveY(0, 1, true);
+        //currentRoom.gameObject.SetActive(true);
 
         isMoving = true;
 
         Vector3 _startPosition = cameraPivot.transform.position;
         Vector3 _endPosition = room.MiddlePoint.transform.position;
 
-        float _elapsed = 0f;
+        cameraPivot.transform.DOMove(_endPosition, moveDuration, true);
 
-        while (_elapsed < moveDuration)
-        {
-            //cameraPivot.transform.position = Vector3.Lerp(_startPosition, _endPosition, _elapsed / moveDuration);
+        //cameraPivot.transform.position = Vector3.MoveTowards(_startPosition, _endPosition, moveDuration);
 
-            //_elapsed += Time.deltaTime;
-
-            _elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(_elapsed / moveDuration);
-            cameraPivot.transform.position = Vector3.Lerp(_startPosition, _endPosition, t);
-            yield return null;
-        }
-
-        cameraPivot.transform.position = _endPosition;
         isMoving = false;
-        arrow.Clicked = false;
     }
 }

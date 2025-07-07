@@ -22,7 +22,8 @@ public class Arrow : MonoBehaviour
     {
         if (Clicked)
         {
-            StartCoroutine(gManager.GoToRoom(AttachedRoom, this));
+            gManager.GoToRoom(AttachedRoom);
+            //StartCoroutine(gManager.GoToRoom(AttachedRoom, this));
             Clicked = false;
         }
     }

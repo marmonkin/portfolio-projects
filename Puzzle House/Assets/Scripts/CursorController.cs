@@ -80,6 +80,12 @@ public class CursorController : MonoBehaviour
                 break;
             }
         }
+
+        if(currentSelection != newSelection)
+        {
+            currentSelection = newSelection;
+            DefaultCursor();
+        }
     }
 
     private void InteractiveCursor()
@@ -92,11 +98,13 @@ public class CursorController : MonoBehaviour
 
     private void DefaultCursor()
     {
-        isInteractive = true;
+        isInteractive = false;
         Vector2 hotspot = new Vector2(defaultTexture.width / 2, 0);
 
         Cursor.SetCursor(defaultTexture, hotspot, CursorMode.Auto);
     }
+
+    
 
     private void StartedClick()
     {

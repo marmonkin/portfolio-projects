@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,11 +18,12 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
-        this.gameObject.SetActive(false);
+        SpawnArrows();
     }
     void Start()
     {
-        SpawnArrows();
+        MiddlePoint.transform.SetParent(null, true);
+        this.transform.DOLocalMoveY(-20, 0);
     }
 
     // Update is called once per frame
@@ -30,10 +32,18 @@ public class Room : MonoBehaviour
 
     }
 
+    private void OnDisable()
+    {
+        //this.gameObject.transform.DOLocalMoveY()
+    }
+
+    private void OnEnable()
+    {
+        //this.gameObject.transform.DOMoveY(0, 1, true);
+    }
+
     private void SpawnArrows()
     {
-        Debug.Log(allRooms[0]);
-
         foreach (Room room in allRooms)
         {
             if (room != null)
@@ -53,5 +63,10 @@ public class Room : MonoBehaviour
         }
 
         this.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    private void TimedDisable()
+    {
+        this.gameObject.SetActive(false);
     }
 }
