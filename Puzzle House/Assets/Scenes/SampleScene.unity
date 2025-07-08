@@ -2286,6 +2286,8 @@ MonoBehaviour:
   cameraPivot: {fileID: 149022428}
   startingRoom: {fileID: 1921604817}
   moveDuration: 1
+  roomEaseType: 27
+  camEaseType: 18
 --- !u!114 &1878324755
 MonoBehaviour:
   m_ObjectHideFlags: 0
