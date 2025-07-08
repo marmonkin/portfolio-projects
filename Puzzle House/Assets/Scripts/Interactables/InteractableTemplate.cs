@@ -7,13 +7,4 @@ public class InteractableTemplate : MonoBehaviour, IInteractable
         Debug.Log("Clicked " + this);
     }
 
-    private void OnEnable()
-    {
-        InteractablesManager.AddInterEvent.Invoke(transform);
-    }
-
-    private void OnDisable()
-    {
-        InteractablesManager.RemoveInterEvent.Invoke(transform);
-    }
 }

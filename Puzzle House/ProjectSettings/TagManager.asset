@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Room
   - Anchor
+  - RoomBlock
   layers:
   - Default
   - TransparentFX
