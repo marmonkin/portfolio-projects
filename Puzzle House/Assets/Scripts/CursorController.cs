@@ -53,35 +53,72 @@ public class CursorController : MonoBehaviour
         FindInteractable();
     }
 
+    //private void FindInteractable()
+    //{
+    //    newSelection = null;
+
+    //    for (int itemIndex = 0;
+    //        itemIndex < iManager.Interactables.Count;
+    //        itemIndex++)
+    //    {
+    //        Vector3 mouseOffset =
+    //            iManager.Interactables[itemIndex].position
+    //            - new Vector3(
+    //                controls.Mouse.Position.ReadValue<Vector2>().x,
+    //                controls.Mouse.Position.ReadValue<Vector2>().y,
+    //                0f);
+    //        float sqrMag = mouseOffset.sqrMagnitude;
+
+    //        if (sqrMag < DistanceThreshold * DistanceThreshold)
+    //        {
+    //            newSelection = iManager.Interactables[itemIndex].transform;
+
+    //            if (isInteractive == false)
+    //            {
+    //                InteractiveCursor();
+    //            }
+    //            break;
+    //        }
+    //    }
+
+    //    if (currentSelection != newSelection)
+    //    {
+    //        currentSelection = newSelection;
+    //        DefaultCursor();
+    //    }
+    //}
+
     private void FindInteractable()
     {
         newSelection = null;
 
-        for(int itemIndex = 0;
-            itemIndex < iManager.Interactables.Count;
-            itemIndex++)
+        // Get the mouse position
+        Vector2 mousePos = controls.Mouse.Position.ReadValue<Vector2>();
+
+        // Create a ray from the camera through the mouse position
+        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+
+        // Perform the raycast
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            Vector3 mouseOffset =
-                iManager.Interactables[itemIndex].position 
-                - new Vector3(
-                    controls.Mouse.Position.ReadValue<Vector2>().x,
-                    controls.Mouse.Position.ReadValue<Vector2>().y,
-                    0f);
-            float sqrMag = mouseOffset.sqrMagnitude;
-
-            if (sqrMag < DistanceThreshold * DistanceThreshold)
+            // Check if the hit object is in our interactables list
+            for (int itemIndex = 0; itemIndex < iManager.Interactables.Count; itemIndex++)
             {
-                newSelection = iManager.Interactables[itemIndex].transform;
-
-                if(isInteractive == false)
+                if (iManager.Interactables[itemIndex] == hit.transform)
                 {
-                    InteractiveCursor();
+                    newSelection = hit.transform;
+
+                    if (isInteractive == false)
+                    {
+                        InteractiveCursor();
+                    }
+                    break;
                 }
-                break;
             }
         }
 
-        if(currentSelection != newSelection)
+        if (currentSelection != newSelection)
         {
             currentSelection = newSelection;
             DefaultCursor();

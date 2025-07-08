@@ -27,7 +27,7 @@ public class InteractablesManager : MonoBehaviour
     {
         mainCamera = Camera.main;
 
-        ChildrenToScreenPoint();
+        //ChildrenToScreenPoint();
     }
 
     void Update()
@@ -35,15 +35,15 @@ public class InteractablesManager : MonoBehaviour
         
     }
 
-    private void ChildrenToScreenPoint()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).position = mainCamera.WorldToScreenPoint(transform.GetChild(i).position);
+    //private void ChildrenToScreenPoint()
+    //{
+    //    for (int i = 0; i < transform.childCount; i++)
+    //    {
+    //        transform.GetChild(i).position = mainCamera.WorldToScreenPoint(transform.GetChild(i).position);
 
-            transform.GetChild(i).localScale = Vector3.one * 100;
-        }
-    }
+    //        transform.GetChild(i).localScale = Vector3.one;
+    //    }
+    //}
 
     private void AddInterList(Transform transform)
     {

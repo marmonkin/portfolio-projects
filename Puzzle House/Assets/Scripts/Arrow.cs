@@ -4,8 +4,6 @@ public class Arrow : MonoBehaviour
 {
     public Room AttachedRoom;
     
-    [HideInInspector]public bool Clicked;
-
     private Room parentRoom;
     private GameManager gManager;
 
@@ -20,17 +18,10 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Clicked)
-        {
-            gManager.GoToRoom(AttachedRoom);
-            //StartCoroutine(gManager.GoToRoom(AttachedRoom, this));
-            Clicked = false;
-        }
     }
 
     private void OnMouseDown()
     {
-        //StartCoroutine(gManager.GoToRoom(AttachedRoom));
-        Clicked = true;
+        gManager.GoToRoom(AttachedRoom);
     }
 }

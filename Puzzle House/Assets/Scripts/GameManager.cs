@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     private List<Room> everySingleRoom = new List<Room>();
     private Room currentRoom;
+    private Room previousRoom;
 
     private bool isMoving;
 
@@ -18,8 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentRoom = startingRoom.GetComponent<Room>();
-        currentRoom.gameObject.SetActive(true);
-        startingRoom.transform.DOLocalMoveY(0, 1, true);
+        startingRoom.transform.DOLocalMoveY(0, 1);
     }
 
     // Update is called once per frame
@@ -31,9 +31,13 @@ public class GameManager : MonoBehaviour
     public void GoToRoom(Room room)
     {
         //currentRoom.gameObject.SetActive(false);
-        currentRoom.transform.DOLocalMoveY(-20, 1);
+        currentRoom.transform.DOLocalMoveY(-30, 1);
+        previousRoom = currentRoom;
+        Invoke("HideRoom", 1);
+
         currentRoom = room;
-        currentRoom.transform.DOLocalMoveY(0, 1, true);
+        currentRoom.gameObject.SetActive(true);
+        currentRoom.transform.DOLocalMoveY(0, 1);
         //currentRoom.gameObject.SetActive(true);
 
         isMoving = true;
@@ -41,10 +45,15 @@ public class GameManager : MonoBehaviour
         Vector3 _startPosition = cameraPivot.transform.position;
         Vector3 _endPosition = room.MiddlePoint.transform.position;
 
-        cameraPivot.transform.DOMove(_endPosition, moveDuration, true);
+        cameraPivot.transform.DOMove(_endPosition, moveDuration);
 
         //cameraPivot.transform.position = Vector3.MoveTowards(_startPosition, _endPosition, moveDuration);
 
         isMoving = false;
+    }
+
+    private void HideRoom()
+    {
+        previousRoom.gameObject.SetActive(false);
     }
 }
