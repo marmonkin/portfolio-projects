@@ -7,6 +7,7 @@ public class CursorController : MonoBehaviour
 
     [SerializeField]
     private Transform newSelection;
+
     private Transform currentSelection;
 
     public float DistanceThreshold;
@@ -14,8 +15,15 @@ public class CursorController : MonoBehaviour
     [Header("Cursor Textures")]
     [SerializeField]
     private Texture2D selectionTexture;
+
     [SerializeField]
     private Texture2D defaultTexture;
+
+    [SerializeField]
+    private Texture2D shovelTexture;
+
+    [SerializeField]
+    private Texture2D walkTexture;
 
     private InteractablesManager iManager;
     private Cursor interactiveCursor;
@@ -141,11 +149,8 @@ public class CursorController : MonoBehaviour
         Cursor.SetCursor(defaultTexture, hotspot, CursorMode.Auto);
     }
 
-    
-
     private void StartedClick()
     {
-
     }
 
     private void EndedClick()

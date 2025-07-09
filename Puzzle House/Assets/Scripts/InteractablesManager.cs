@@ -23,16 +23,15 @@ public class InteractablesManager : MonoBehaviour
         RemoveInterEvent += RemoveInterList;
     }
 
-    void Start()
+    private void Start()
     {
         mainCamera = Camera.main;
 
         //ChildrenToScreenPoint();
     }
 
-    void Update()
+    private void Update()
     {
-        
     }
 
     //private void ChildrenToScreenPoint()

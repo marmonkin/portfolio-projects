@@ -2285,7 +2285,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 149022428}
   startingRoom: {fileID: 1921604817}
-  moveDuration: 1
+  cameraMoveDuration: 1
+  roomMoveDuration: 1
   roomEaseType: 27
   camEaseType: 18
 --- !u!114 &1878324755
@@ -2317,6 +2318,8 @@ MonoBehaviour:
   DistanceThreshold: 10
   selectionTexture: {fileID: 2800000, guid: 87b0cffb9d413694d9cbb7dc19c78a29, type: 3}
   defaultTexture: {fileID: 2800000, guid: 6147065aa747cbf4f90db8a6f4063f92, type: 3}
+  shovelTexture: {fileID: 0}
+  walkTexture: {fileID: 0}
 --- !u!1 &1921604817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3801425038093333335, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
@@ -2471,6 +2474,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 54464396}
     - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: startingRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: AllRooms.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -2506,6 +2513,18 @@ PrefabInstance:
       propertyPath: 'allRooms.Array.data[1]'
       value: 
       objectReference: {fileID: 54464396}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: LocalInteractables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: 'LocalInteractables.Array.data[0]'
+      value: 
+      objectReference: {fileID: 969037705}
+    - target: {fileID: 1122402791536173923, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
+      propertyPath: 'LocalInteractables.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1942999830}
     - target: {fileID: 2098367663142935477, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
       propertyPath: m_Enabled
       value: 1

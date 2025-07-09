@@ -1,19 +1,19 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class RoomCast : MonoBehaviour
 {
-
     [SerializeField] private string TargetTag;
     [SerializeField] private float MaxDistance;
 
     [Space(10)]
     [Header("Overrides")]
     public bool blocked;
-    [SerializeField][ShowIf("blocked")] 
 
+    [SerializeField]
+    [ShowIf("blocked")]
     private Room room;
+
     private List<GameObject> DetectedObjects = new List<GameObject>();
 
     private void Awake()

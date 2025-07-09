@@ -34,10 +34,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 _moveDir = _forwardRelative + _rightRelative;
 
-
         rb.linearVelocity = (_moveDir * Time.deltaTime).normalized * Speed;
 
         transform.forward = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-
     }
 }

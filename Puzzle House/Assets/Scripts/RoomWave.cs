@@ -6,6 +6,7 @@ public class RoomWave : MonoBehaviour
 {
     [Header("Animation Settings")]
     public float WaveDuration = 2f; // Total duration of the wave
+
     public float WaveDelay = 0.1f; // Delay between each cube's animation
     public float MoveHeight = 3f; // How high cubes move up
     public Vector3 WaveOrigin = Vector3.zero; // Corner where wave starts
@@ -18,33 +19,33 @@ public class RoomWave : MonoBehaviour
 
     private string cubeTag = "RoomBlock";
 
-    void Start()
+    private void Start()
     {
         FindAllCubes();
     }
 
-    void FindAllCubes()
+    private void FindAllCubes()
     {
         roomCubes.Clear();
 
-            // Get all transforms in children recursively
-            Transform[] allChildren = GetComponentsInChildren<Transform>();
+        // Get all transforms in children recursively
+        Transform[] allChildren = GetComponentsInChildren<Transform>();
 
-            foreach (Transform child in allChildren)
+        foreach (Transform child in allChildren)
+        {
+            // Skip self
+            if (child == transform) continue;
+
+            // Optional tag filtering
+            if (!string.IsNullOrEmpty(cubeTag) && !child.CompareTag(cubeTag))
+                continue;
+
+            // Add to list if it's a cube (you could add more filters here)
+            if (child.gameObject.activeInHierarchy)
             {
-                // Skip self
-                if (child == transform) continue;
-
-                // Optional tag filtering
-                if (!string.IsNullOrEmpty(cubeTag) && !child.CompareTag(cubeTag))
-                    continue;
-
-                // Add to list if it's a cube (you could add more filters here)
-                if (child.gameObject.activeInHierarchy)
-                {
-                    roomCubes.Add(child);
-                }
+                roomCubes.Add(child);
             }
+        }
     }
 
     public void TriggerWaveAnimation()

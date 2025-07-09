@@ -6,5 +6,4 @@ public class InteractableTemplate : MonoBehaviour, IInteractable
     {
         Debug.Log("Clicked " + this);
     }
-
 }
