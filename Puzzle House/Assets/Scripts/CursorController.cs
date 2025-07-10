@@ -119,10 +119,26 @@ public class CursorController : MonoBehaviour
 
                     if (isInteractive == false)
                     {
-                        InteractiveCursor();
+                        if (hit.transform.CompareTag("DigSpot"))
+                        {
+                            ShovelCursor();
+                        }
+                        else
+                        {
+                            InteractiveCursor();
+                        }
                     }
                     break;
                 }
+            }
+
+            if (hit.transform.CompareTag("Arrow"))
+            {
+                WalkCursor();
+            }
+            else
+            {
+                DefaultCursor();
             }
         }
 
@@ -131,6 +147,8 @@ public class CursorController : MonoBehaviour
             currentSelection = newSelection;
             DefaultCursor();
         }
+
+
     }
 
     private void InteractiveCursor()
@@ -147,6 +165,22 @@ public class CursorController : MonoBehaviour
         Vector2 hotspot = new Vector2(defaultTexture.width / 2, 0);
 
         Cursor.SetCursor(defaultTexture, hotspot, CursorMode.Auto);
+    }
+
+    private void WalkCursor()
+    {
+        isInteractive = false;
+        Vector2 hotspot = new Vector2(defaultTexture.width / 2, 0);
+
+        Cursor.SetCursor(walkTexture, hotspot, CursorMode.Auto);
+    }
+
+    private void ShovelCursor()
+    {
+        isInteractive = true;
+        Vector2 hotspot = new Vector2(defaultTexture.width / 2, 0);
+
+        Cursor.SetCursor(shovelTexture, hotspot, CursorMode.Auto);
     }
 
     private void StartedClick()
