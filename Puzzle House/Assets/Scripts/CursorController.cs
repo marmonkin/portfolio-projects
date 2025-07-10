@@ -122,23 +122,18 @@ public class CursorController : MonoBehaviour
                         if (hit.transform.CompareTag("DigSpot"))
                         {
                             ShovelCursor();
+                            break;
                         }
-                        else
+
+                        if (hit.transform.CompareTag("Arrow"))
                         {
-                            InteractiveCursor();
+                            WalkCursor();
+                            break;
                         }
+                            InteractiveCursor();
                     }
                     break;
                 }
-            }
-
-            if (hit.transform.CompareTag("Arrow"))
-            {
-                WalkCursor();
-            }
-            else
-            {
-                DefaultCursor();
             }
         }
 

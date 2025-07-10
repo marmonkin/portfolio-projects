@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Arrow : MonoBehaviour,IInteractable
 {
     public Room AttachedRoom;
 
@@ -14,13 +14,9 @@ public class Arrow : MonoBehaviour
         gManager = FindAnyObjectByType<GameManager>();
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-    }
-
-    private void OnMouseDown()
+    public void OnClickAction()
     {
         gManager.GoToRoom(AttachedRoom);
+
     }
 }
