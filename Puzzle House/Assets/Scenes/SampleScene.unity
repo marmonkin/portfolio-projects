@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 969037710}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2895,8 +2895,8 @@ MonoBehaviour:
   DistanceThreshold: 10
   selectionTexture: {fileID: 2800000, guid: 87b0cffb9d413694d9cbb7dc19c78a29, type: 3}
   defaultTexture: {fileID: 2800000, guid: 6147065aa747cbf4f90db8a6f4063f92, type: 3}
-  shovelTexture: {fileID: 0}
-  walkTexture: {fileID: 0}
+  digTexture: {fileID: 2800000, guid: 14a7fe97beeb74549aabd51e6dc6ed68, type: 3}
+  arrowTexture: {fileID: 2800000, guid: 2ea3a18c9f6a35246b303f85bacf6a8d, type: 3}
 --- !u!1 &1921604817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3801425038093333335, guid: cf948fc2d90254443a4b61b6e338efe4, type: 3}
@@ -2918,7 +2918,7 @@ GameObject:
   - component: {fileID: 1942999835}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

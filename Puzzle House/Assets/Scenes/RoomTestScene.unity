@@ -4354,10 +4354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveDuration: 1
-  WaveDelay: 0.1
-  MoveHeight: 20
-  WaveOrigin: {x: 5, y: 0, z: 5}
-  EaseType: 16
+  WaveDelay: 0
+  MoveHeight: -20
+  WaveOrigin: {x: 0, y: 0, z: 0}
+  EaseType: 3
 --- !u!1001 &966346742
 PrefabInstance:
   m_ObjectHideFlags: 0

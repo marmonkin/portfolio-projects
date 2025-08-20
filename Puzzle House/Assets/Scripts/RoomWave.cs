@@ -74,7 +74,7 @@ public class RoomWave : MonoBehaviour
         {
             float delay = (float)i / roomCubes.Count * WaveDuration;
 
-            roomCubes[i].DOMoveY(originalPositions[i].y, WaveDuration - delay)
+            roomCubes[i].DOMoveY(originalPositions[i].y, WaveDuration - WaveDelay)
                 .SetDelay(delay)
                 .SetEase(EaseType);
         }

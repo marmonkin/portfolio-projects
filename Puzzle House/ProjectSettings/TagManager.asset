@@ -7,6 +7,10 @@ TagManager:
   - Room
   - Anchor
   - RoomBlock
+  - Arrow
+  - Dig
+  - Interact
+  - Look
   layers:
   - Default
   - TransparentFX

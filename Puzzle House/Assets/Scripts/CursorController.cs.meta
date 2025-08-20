@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 78f3b32828b231d4d94c00a6c16d49a6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - newSelection: {instanceID: 0}
+  - selectionTexture: {fileID: 2800000, guid: 87b0cffb9d413694d9cbb7dc19c78a29, type: 3}
+  - defaultTexture: {fileID: 2800000, guid: 6147065aa747cbf4f90db8a6f4063f92, type: 3}
+  - shovelTexture: {fileID: 2800000, guid: 14a7fe97beeb74549aabd51e6dc6ed68, type: 3}
+  - walkTexture: {fileID: 2800000, guid: 2ea3a18c9f6a35246b303f85bacf6a8d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

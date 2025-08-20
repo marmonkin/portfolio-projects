@@ -46,7 +46,8 @@ public class Room : MonoBehaviour
         //this.gameObject.transform.DOLocalMoveY()
         foreach (Transform t in LocalInteractables)
         {
-            t.gameObject.SetActive(false);
+            if(t != null)
+                t.gameObject.SetActive(false);
         }
     }
 
@@ -55,7 +56,8 @@ public class Room : MonoBehaviour
         //this.gameObject.transform.DOMoveY(0, 1, true);
         foreach (Transform t in LocalInteractables)
         {
-            t.gameObject.SetActive(true);
+            if (t != null)
+                t.gameObject.SetActive(true);
         }
     }
 

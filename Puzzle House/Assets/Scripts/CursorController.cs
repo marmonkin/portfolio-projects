@@ -20,16 +20,19 @@ public class CursorController : MonoBehaviour
     private Texture2D defaultTexture;
 
     [SerializeField]
-    private Texture2D shovelTexture;
+    private Texture2D digTexture;
 
     [SerializeField]
-    private Texture2D walkTexture;
+    private Texture2D arrowTexture;
 
     private InteractablesManager iManager;
     private Cursor interactiveCursor;
 
     public static Action MakeCursorDefault;
     public static Action MakeCursorInteractive;
+    public static Action MakeCursorArrow;
+    public static Action MakeCursorDig;
+    public static Action MakeCursorLook;
 
     private bool isInteractive = false;
 
@@ -44,6 +47,8 @@ public class CursorController : MonoBehaviour
         controls.Mouse.Click.performed += _ => EndedClick();
         MakeCursorDefault += DefaultCursor;
         MakeCursorInteractive += InteractiveCursor;
+        MakeCursorArrow += ArrowCursor;
+        MakeCursorDig += DigCursor;
     }
 
     private void OnEnable()
@@ -117,9 +122,19 @@ public class CursorController : MonoBehaviour
                 {
                     newSelection = hit.transform;
 
-                    if (isInteractive == false)
+                    if (isInteractive == false && newSelection.CompareTag("Interact"))
                     {
                         InteractiveCursor();
+                    }
+
+                    if (isInteractive == false && newSelection.CompareTag("Arrow"))
+                    {
+                        ArrowCursor();
+                    }
+
+                    if (isInteractive == false && newSelection.CompareTag("Dig"))
+                    {
+                        DigCursor();
                     }
                     break;
                 }
@@ -136,9 +151,22 @@ public class CursorController : MonoBehaviour
     private void InteractiveCursor()
     {
         isInteractive = true;
-        Vector2 hotspot = new Vector2(selectionTexture.width / 2, 0);
+            Vector2 hotspot = new Vector2(selectionTexture.width / 2, 0);
+            Cursor.SetCursor(selectionTexture, hotspot, CursorMode.Auto);
+    }
 
-        Cursor.SetCursor(selectionTexture, hotspot, CursorMode.Auto);
+    private void ArrowCursor()
+    {
+        isInteractive = true;
+        Vector2 hotspot = new Vector2(arrowTexture.width / 2, 0);
+        Cursor.SetCursor(arrowTexture, hotspot, CursorMode.Auto);
+    }
+
+    private void DigCursor()
+    {
+        isInteractive = true;
+        Vector2 hotspot = new Vector2(digTexture.width / 2, 0);
+        Cursor.SetCursor(digTexture, hotspot, CursorMode.Auto);
     }
 
     private void DefaultCursor()
