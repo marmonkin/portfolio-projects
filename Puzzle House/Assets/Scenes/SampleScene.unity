@@ -2917,7 +2917,7 @@ GameObject:
   - component: {fileID: 1942999834}
   - component: {fileID: 1942999835}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Note
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3037,6 +3037,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73a267b86da3004fb1c361df513493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closeKey: 324
+  canvas: {fileID: 275108315}
+  canvasText: {fileID: 683591041}
+  canvasImage: {fileID: 1421469347}
+  noteText: Jarvis, it's jorking time
+  noteImage: {fileID: 0}
 --- !u!1001 &4848609973484824660
 PrefabInstance:
   m_ObjectHideFlags: 0
