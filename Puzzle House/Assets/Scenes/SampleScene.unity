@@ -2866,6 +2866,10 @@ MonoBehaviour:
   roomMoveDuration: 1
   roomEaseType: 27
   camEaseType: 18
+  NoteCanvas: {fileID: 275108318}
+  NoteBgImage: {fileID: 1421469347}
+  NoteText: {fileID: 683591041}
+  CanInteract: 0
 --- !u!114 &1878324755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,9 +3042,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeKey: 324
-  canvas: {fileID: 275108315}
-  canvasText: {fileID: 683591041}
-  canvasImage: {fileID: 1421469347}
   noteText: Jarvis, it's jorking time
   noteImage: {fileID: 0}
 --- !u!1001 &4848609973484824660

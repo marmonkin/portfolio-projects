@@ -9,35 +9,24 @@ public class NoteBase : MonoBehaviour, IInteractable
     [SerializeField] private KeyCode closeKey;
 
     [Space(10)]
-    [Header("UI")]
-    [SerializeField] private GameObject canvas;
-    [SerializeField] private TMP_Text canvasText;
-    [SerializeField] private Image canvasImage;
-
-
-    [Space(10)]
     [Header("Note Parameters")]
     [SerializeField] [TextArea] private string noteText;
     [SerializeField] private Image noteImage;
 
+    private GameObject canvas;
+    private TMP_Text canvasText;
+    private Image canvasImage;
+
+    private GameManager gManager;
+
     private bool isOpen = false;
     private void OnEnable()
     {
-        if (canvas == null)
-        {
-            canvas = FindAnyObjectByType<Canvas>().gameObject;
-        }
+        gManager = GetComponentInParent<GameManager>();
 
-        if (canvasImage == null)
-        {
-            canvasImage = canvas.GetComponentInChildren<Image>();
-        }
-
-        if(canvasText == null)
-        {
-            canvasText = canvasImage.GetComponentInChildren<TMP_Text>();
-        }
-
+        canvas = gManager.NoteCanvas.gameObject;
+        canvasImage = gManager.NoteBgImage;
+        canvasText = gManager.NoteText;
     }
 
     public void OnClickAction()
@@ -53,6 +42,8 @@ public class NoteBase : MonoBehaviour, IInteractable
 
         canvas.SetActive(true);
         isOpen = true;
+
+        gManager.CanInteract = false;
     }
 
     private void CloseNote()
@@ -61,6 +52,8 @@ public class NoteBase : MonoBehaviour, IInteractable
         canvasText.text = null;
         canvasImage = null;
         isOpen = false;
+
+        gManager.CanInteract = true;
     }
 
     private void Update()

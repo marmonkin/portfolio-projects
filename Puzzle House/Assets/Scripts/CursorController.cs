@@ -25,7 +25,9 @@ public class CursorController : MonoBehaviour
     [SerializeField]
     private Texture2D arrowTexture;
 
+    private GameManager gManager;
     private InteractablesManager iManager;
+
     private Cursor interactiveCursor;
 
     public static Action MakeCursorDefault;
@@ -41,6 +43,7 @@ public class CursorController : MonoBehaviour
         DefaultCursor();
 
         iManager = this.GetComponent<InteractablesManager>();
+        gManager = this.GetComponent<GameManager>();
 
         controls = new NewControls();
         controls.Mouse.Click.started += _ => StartedClick();
@@ -118,7 +121,7 @@ public class CursorController : MonoBehaviour
             // Check if the hit object is in our interactables list
             for (int itemIndex = 0; itemIndex < iManager.Interactables.Count; itemIndex++)
             {
-                if (iManager.Interactables[itemIndex] == hit.transform)
+                if (iManager.Interactables[itemIndex] == hit.transform && gManager.CanInteract)
                 {
                     newSelection = hit.transform;
 
@@ -192,7 +195,7 @@ public class CursorController : MonoBehaviour
         {
             IInteractable interactable =
                 newSelection.gameObject.GetComponent<IInteractable>();
-            if (interactable != null)
+            if (interactable != null && gManager.CanInteract)
             {
                 interactable.OnClickAction();
             }

@@ -1,6 +1,8 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,22 +13,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Ease roomEaseType;
     [SerializeField] private Ease camEaseType;
 
+    [Space(10)]
+    [Header("Note Stuff")]
+    public Canvas NoteCanvas;
+    public Image NoteBgImage;
+    public TMP_Text NoteText;
+
     private List<Room> everySingleRoom = new List<Room>();
     private Room currentRoom;
     private Room previousRoom;
 
     private bool isMoving;
 
+    [HideInInspector] public bool CanInteract = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         currentRoom = startingRoom.GetComponent<Room>();
         startingRoom.transform.DOLocalMoveY(0, 0);
+
+        CanInteract = true;
     }
 
     // Update is called once per frame
     private void Update()
     {
+        //Debug.Log(CanInteract);
     }
 
     public void GoToRoom(Room room)
