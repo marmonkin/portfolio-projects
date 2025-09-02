@@ -22,7 +22,7 @@ public class NoteBase : MonoBehaviour, IInteractable
     private bool isOpen = false;
     private void OnEnable()
     {
-        gManager = GetComponentInParent<GameManager>();
+        gManager = FindAnyObjectByType<GameManager>();
 
         canvas = gManager.NoteCanvas.gameObject;
         canvasImage = gManager.NoteBgImage;
