@@ -24,7 +24,7 @@ public class NoteBase : MonoBehaviour, IInteractable
     {
         gManager = FindAnyObjectByType<GameManager>();
 
-        canvas = gManager.NoteCanvas.gameObject;
+        canvas = gManager.NoteOverlay.gameObject;
         canvasImage = gManager.NoteBgImage;
         canvasText = gManager.NoteText;
     }

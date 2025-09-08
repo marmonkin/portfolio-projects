@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Space(10)]
     [Header("Note Stuff")]
-    public Canvas NoteCanvas;
+    public GameObject NoteOverlay;
     public Image NoteBgImage;
     public TMP_Text NoteText;
 
