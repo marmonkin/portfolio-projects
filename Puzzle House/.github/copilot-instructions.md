@@ -2,7 +2,7 @@
 - Project name: Puzzle House
 - Unity version: Unity 6000.0.31f1
 - Active game object:
-  - Name: UIcamera
+  - Name: Panel
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
