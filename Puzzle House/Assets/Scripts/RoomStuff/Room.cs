@@ -1,11 +1,12 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Room : MonoBehaviour
 {
     [Header("Rooms")]
-    [SerializeField] private List<Room> allRooms = new List<Room>(4);
+    public List<Room> MyRooms = new List<Room>(4);
 
     [Header("Interactables")]
     [SerializeField] public List<Transform> LocalInteractables;
@@ -15,7 +16,13 @@ public class Room : MonoBehaviour
     [SerializeField] public GameObject MiddlePoint;
 
     [SerializeField] private GameObject arrowPrefab;
+    public Image MyMapIcon;
     [SerializeField] private bool startingRoom;
+
+    [HideInInspector]
+    public bool Revealed;
+    [HideInInspector]
+    public bool Explored;
 
     private void Awake()
     {
@@ -24,6 +31,8 @@ public class Room : MonoBehaviour
 
     private void Start()
     {
+        Level.AllRooms.Add(this);
+
         MiddlePoint.transform.SetParent(null, true);
         this.transform.DOLocalMoveY(-20, 0);
         if (!startingRoom)
@@ -63,7 +72,7 @@ public class Room : MonoBehaviour
 
     private void SpawnArrows()
     {
-        foreach (Room room in allRooms)
+        foreach (Room room in MyRooms)
         {
             if (room != null)
             {

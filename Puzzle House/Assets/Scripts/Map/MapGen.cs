@@ -21,7 +21,6 @@ public class MapGen : MonoBehaviour
         Level.SecretRoomIcon = SecretRoom;
         Level.PuzzleRoomIcon = PuzzleRoom;
 
-
     }
 
     void DrawRoomOnMap(Sprite s, Vector2 Location)
@@ -31,6 +30,7 @@ public class MapGen : MonoBehaviour
         RoomImage.sprite = s;
         RectTransform rectTransform = RoomImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(Level.Height, Level.Width) * Level.IconScale;
+        rectTransform.position = Location * (Level.IconScale * Level.Height * Level.Scale + (Level.Padding * Level.Height * Level.Scale));
         RoomImage.transform.SetParent(transform, false);
 
     }
