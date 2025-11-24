@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour, IInteractable
 {
+    public bool DoNotRespawn { get; set; }
+
     public Room AttachedRoom;
 
     private Room parentRoom;

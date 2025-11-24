@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         Level.CurrentRoom.Explored = true;
         foreach (Room r in Level.CurrentRoom.MyRooms)
         {
-            if(!r.Revealed) r.Revealed = true;
+            if(r != null && !r.Revealed) r.Revealed = true;
             //else if (!r.Explored) r.Explored = true;
             DrawRevealedRooms();
         }

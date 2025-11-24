@@ -31,6 +31,8 @@ public class Room : MonoBehaviour
 
     private void Start()
     {
+        this.GetComponent<BoxCollider>().enabled = false;
+
         Level.AllRooms.Add(this);
 
         MiddlePoint.transform.SetParent(null, true);
@@ -40,14 +42,12 @@ public class Room : MonoBehaviour
             this.gameObject.SetActive(false);
             foreach (Transform i in LocalInteractables)
             {
-                i.gameObject.SetActive(false);
+                if (!i.GetComponentInChildren<IInteractable>().DoNotRespawn)
+                {
+                    i.gameObject.SetActive(false);
+                }
             }
         }
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
     }
 
     private void OnDisable()
@@ -65,8 +65,14 @@ public class Room : MonoBehaviour
         //this.gameObject.transform.DOMoveY(0, 1, true);
         foreach (Transform t in LocalInteractables)
         {
-            if (t != null)
-                t.gameObject.SetActive(true);
+            if (t != null && t.GetComponentInChildren<IInteractable>() != null)
+            {
+                if (!t.GetComponentInChildren<IInteractable>().DoNotRespawn)
+                {
+                    t.gameObject.SetActive(true);
+                }
+            }
+            else t.gameObject.SetActive(true);
         }
     }
 
@@ -89,11 +95,6 @@ public class Room : MonoBehaviour
             }
         }
 
-        this.GetComponent<BoxCollider>().enabled = false;
-    }
-
-    private void TimedDisable()
-    {
-        this.gameObject.SetActive(false);
+        
     }
 }

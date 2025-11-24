@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NoteBase : MonoBehaviour, IInteractable
 {
+    public bool DoNotRespawn { get; set; }
+
     [Header("Input")]
     [SerializeField] private KeyCode closeKey;
 
